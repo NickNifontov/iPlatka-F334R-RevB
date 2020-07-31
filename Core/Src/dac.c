@@ -56,13 +56,11 @@ void MX_DAC1_Init(void)
   }
   /** DAC channel OUT2 config 
   */
-  sConfig.DAC_Trigger = DAC_TRIGGER_HRTIM1_DACTRG2;
   sConfig.DAC_OutputSwitch = DAC_OUTPUTSWITCH_ENABLE;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
-  __HAL_REMAPTRIGGER_ENABLE(HAL_REMAPTRIGGER_DAC1_TRIG5);
   /** Configure Triangle wave generation on DAC OUT2 
   */
   if (HAL_DACEx_TriangleWaveGenerate(&hdac1, DAC_CHANNEL_2, DAC_TRIANGLEAMPLITUDE_7) != HAL_OK)
